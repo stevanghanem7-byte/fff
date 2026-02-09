@@ -1,0 +1,49 @@
+function startBackgroundHearts() {
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "bg-heart";
+    h.innerText = "❤️";
+    h.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 20000);
+  }, 1500);
+}
+
+yesBtn.addEventListener("click", () => {
+  yesBtn.style.display = "none";
+
+  typeText(
+    "I knew you wouldn’t say no forever 😉🫂❤️\n" +
+    "I love you my little beautiful stupid princess 💋\n" +
+    "Happy Valentine ❤️"
+  );
+
+  setInterval(() => {
+    for (let i = 0; i < 35; i++) createHeart();
+  }, 180);
+});
+
+function typeText(text) {
+  question.innerText = "";
+  let i = 0;
+  const typing = setInterval(() => {
+    question.innerText += text[i];
+    i++;
+    if (i >= text.length) clearInterval(typing);
+  }, 50);
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = 18 + Math.random() * 40 + "px";
+  heart.style.animationDuration = 2 + Math.random() * 2 + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+</script>
+
+</body>
+</html>
