@@ -1,7 +1,4 @@
-function startBackgroundHearts() {
-  setInterval(() => {
-    const h = document.createElement("div");
-    h.className = "bg-heart";
+className = "bg-heart";
     h.innerText = "❤️";
     h.style.left = Math.random() * window.innerWidth + "px";
     document.body.appendChild(h);
